@@ -1,3 +1,8 @@
-<p>
-  dashboard works!
-</p>
+<input type="text" placeholder="buscar" [(ngModel)]="query" >
+<ul>
+  <ng-container *ngFor="let friend of friends | search: query; let i = index;">
+    <li><a routerLink="/conversation/{{ friend.uid }}" *ngIf="friend.friend == true">
+      {{ i }}. {{ friend.nick }} - {{ friend.email }}
+    </a></li>
+  </ng-container>
+</ul>
