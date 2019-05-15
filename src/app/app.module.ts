@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -43,9 +46,10 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
     MzNavbarModule,
     MzCardModule,
     MzButtonModule,
-    MzDropdownModule
+    MzDropdownModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
