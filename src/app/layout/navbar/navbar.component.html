@@ -1,7 +1,27 @@
-<mz-navbar>
-  <a href="#" class="brand-logo">Logo</a>
+<!-- <mz-dropdown
+  [id]="'dropdown-demo'"
+  [align]="'left'"
+  [belowOrigin]="false"
+  [constrainWidth]="true"
+  [dropdownButtonId]="'btn-dropdown-demo'"
+  [gutter]="true"
+  [hover]="true"
+  [inDuration]="300"
+  [outDuration]="300"
+  [stopPropagation]="true"
+>
+  <mz-dropdown-item><a href="#!">One</a></mz-dropdown-item>
+  <mz-dropdown-item><a href="#!">Two</a></mz-dropdown-item>
+  <mz-dropdown-divider></mz-dropdown-divider>
+  <mz-dropdown-item><a href="#!">Three</a></mz-dropdown-item>
+</mz-dropdown> -->
+
+<mz-navbar navbarClass="orange darken-2">
+  <a routerLink="/" class="brand-logo">AULA</a>
   <mz-navbar-item-container [align]="'right'">
-    <mz-navbar-item ><a [routerLink]="dashboard" >Tablero</a></mz-navbar-item>
-    <mz-navbar-item><a [routerLink]="">Login</a></mz-navbar-item>
+    <mz-navbar-item ><a routerLink="/dashboard" >Contactos<i class="material-icons right">people</i></a></mz-navbar-item>
+    <!-- <mz-navbar-item><a routerLink="/login" >Login<i class="material-icons right">arrow_drop_down</i></a></mz-navbar-item> -->
+    <!-- <mz-navbar-item><a id="btn-dropdown-demo" >Login<i class="material-icons right">arrow_drop_down</i></a></mz-navbar-item> -->
+    <mz-navbar-item><a id="btn-sidenav-demo" class=""><i class="material-icons right">account_box</i></a></mz-navbar-item>
   </mz-navbar-item-container>
 </mz-navbar>

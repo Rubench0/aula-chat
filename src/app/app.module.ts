@@ -11,7 +11,11 @@ import { ConversationComponent } from './conversation/conversation.component';
 import { MzSidenavModule } from 'ngx-materialize';
 import { MzIconModule, MzIconMdiModule } from 'ngx-materialize';
 import { MzInputModule } from 'ngx-materialize';
-import { MzNavbarModule } from 'ngx-materialize'
+import { MzNavbarModule } from 'ngx-materialize';
+import { MzCardModule } from 'ngx-materialize';
+import { MzButtonModule } from 'ngx-materialize';
+import { MzDropdownModule } from 'ngx-materialize'
+
 import { UserStatusPipe } from './pipes/user-status.pipe';
 import { LoginComponent } from './security/login/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
@@ -36,7 +40,10 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
     MzIconModule,
     MzIconMdiModule,
     MzInputModule,
-    MzNavbarModule
+    MzNavbarModule,
+    MzCardModule,
+    MzButtonModule,
+    MzDropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
