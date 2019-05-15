@@ -1,8 +1,64 @@
-<input type="text" placeholder="buscar" [(ngModel)]="query" >
-<ul>
-  <ng-container *ngFor="let friend of friends | search: query; let i = index;">
-    <li><a routerLink="/conversation/{{ friend.uid }}" *ngIf="friend.friend == true">
-      {{ i }}. {{ friend.nick }} - {{ friend.email }}
-    </a></li>
-  </ng-container>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="input-field col s6">
+        <mz-input-container>
+          <i mz-icon-mdi mz-input-prefix
+            [icon]="'magnify'">
+          </i>
+          <input mz-input
+            [validate]="true"
+            [dataError]="'Dato invalido'"
+            [dataSuccess]="''"
+            id="email-input"
+            [label]="'Buscar'"
+            type="text"
+            [(ngModel)]="query"
+            >
+        </mz-input-container>
+        <div>
+          <ul class="collection with-header">
+            <li class="collection-header"><h4>Contactos</h4></li>
+            <ng-container *ngFor="let friend of friends | search: query; let i = index;">
+              <li class="collection-item avatar" *ngIf="friend.friend == true">
+                <img src="assets/sidenav-demo-avatar.png" alt="" class="circle">
+                <span class="title">{{ friend.nick }}</span><br>
+                <a routerLink="/conversation/{{ friend.uid }}" >
+                  {{ friend.email }}
+                </a>
+                <a href="#!" class="secondary-content">
+                  <img [src]="friend.status | userStatus" class="right" style="width: 10%;height: 10%;">
+                  <!-- <i class="material-icons">grade</i> -->
+                </a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+
+<mz-sidenav [id]="'sidenav-demo'" [collapseButtonId]="'btn-sidenav-demo'">
+  <mz-sidenav-header>
+      <li>
+        <div class="user-view">
+          <div class="background" style="background-color: #333!important;" >
+          </div>
+          <a href="#user"><img class="circle" src="assets/sidenav-demo-avatar.png"></a>
+          <a href="#name"><span class="white-text name">John Doe</span></a>
+          <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div>
+      </li>
+  </mz-sidenav-header>
+  <mz-sidenav-subheader>Clases</mz-sidenav-subheader>
+  <mz-sidenav-link>
+    <a href="#">First Link</a>
+  </mz-sidenav-link>
+  <mz-sidenav-link [active]="true">
+    <a href="#">Active Link</a>
+  </mz-sidenav-link>
+  <mz-sidenav-divider></mz-sidenav-divider>
+  <mz-sidenav-link>
+    <a href="#" class="waves-effect">Second Link With Waves</a>
+  </mz-sidenav-link>
+</mz-sidenav>
+<!-- <button id="btn-sidenav-demo" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Abrir</button> -->

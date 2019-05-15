@@ -8,18 +8,35 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { ConversationComponent } from './conversation/conversation.component';
 
+import { MzSidenavModule } from 'ngx-materialize';
+import { MzIconModule, MzIconMdiModule } from 'ngx-materialize';
+import { MzInputModule } from 'ngx-materialize';
+import { MzNavbarModule } from 'ngx-materialize'
+import { UserStatusPipe } from './pipes/user-status.pipe';
+import { LoginComponent } from './security/login/login.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SearchPipe,
-    ConversationComponent
+    ConversationComponent,
+    UserStatusPipe,
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MzSidenavModule,
+    MzIconModule,
+    MzIconMdiModule,
+    MzInputModule,
+    MzNavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
