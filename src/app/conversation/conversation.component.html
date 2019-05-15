@@ -1,3 +1,59 @@
-<p>
-  conversation works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+        <div class="card" style="min-height: 80vh;" >
+          <div class="chat-header grey white-text">
+              <div class="row">
+                  <div class="col s12 ">
+                    <h5>Clase</h5>
+                  </div>
+              </div>
+          </div>
+          <div class="chat-body">
+              <div class="col s8 chat">
+                <div class="col s12 chat-main">
+                  <div class="col s12">
+                    <div class="message orange white-text left">
+                      <span><b>Ruben</b></span>
+                      <p>Hola ¿Como estan?</p>
+                    </div>
+                  </div>
+                  <div class="col s12">
+                    <div class="message blue white-text right">
+                      <span class=""><b>Ricardo</b></span>
+                      <p>Saludos, todo bien por aqui</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12 chat-message valign-wrapper">
+                  <div class="col s10">
+                    <textarea name="" id="" class="materialize-textarea message_input" ></textarea>
+                  </div>
+                  <div class="col s2">
+                    <div class="">
+                      <button class="btn waves-effect waves-light center-align" type="submit" name="action"><i class="material-icons">send</i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col s4 chat-participants">
+                  <ul class="collection with-header">
+                      <li class="collection-header"><h6>Participantes</h6></li>
+                      <ng-container *ngFor="let friend of friends | search: query; let i = index;">
+                        <li class="collection-item avatar" *ngIf="friend.friend == true">
+                          <img src="assets/sidenav-demo-avatar.png" alt="" class="circle">
+                          <span class="title">{{ friend.nick }}</span>
+                          <a href="#!" class="secondary-content">
+                            {{friend.status}}
+                            <i class="material-icons">grade</i>
+                          </a>
+                        </li>
+                      </ng-container>
+                    </ul>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

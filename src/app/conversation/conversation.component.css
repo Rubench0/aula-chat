@@ -1,0 +1,39 @@
+.chat-header {
+    min-height: 8vh;
+    border-bottom: 1px solid #e3e3e3;
+}
+.chat-body {
+    /* min-height: 55vh; */
+}
+.chat-participants {
+    min-height: 72vh;
+    /* border: 1px solid #e3e3e3; */
+}
+.chat {
+    min-height: 70vh;
+    border-right: 1px solid #e3e3e3;
+}
+
+.chat-main {
+    min-height: 50vh;
+    overflow-y: auto;
+}
+.chat-message {
+    border-top: 1px solid #e3e3e3;
+    min-height: 10vh;
+}
+
+.message_input {
+    margin-top: 2%;
+}
+
+.message {
+    margin-top: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
