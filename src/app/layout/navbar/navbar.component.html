@@ -17,11 +17,22 @@
 </mz-dropdown> -->
 
 <mz-navbar navbarClass="orange darken-2">
-  <a routerLink="/" class="brand-logo">AULA</a>
+  <mz-navbar-item-container [align]="'left'">
+      <mz-navbar-item >
+        <a id="btn-sidenav-mobile" ><i class="material-icons">dehaze</i></a>
+      </mz-navbar-item>
+      <mz-navbar-item >
+          <a [routerLink]="'/'" >AULA</a>
+        </mz-navbar-item>
+    </mz-navbar-item-container>
   <mz-navbar-item-container [align]="'right'">
-    <mz-navbar-item ><a routerLink="/dashboard" >Contactos<i class="material-icons right">people</i></a></mz-navbar-item>
+    <mz-navbar-item >
+      <a [routerLink]="'/dashboard'" >Contactos<i class="material-icons right">people</i></a>
+    </mz-navbar-item>
     <!-- <mz-navbar-item><a routerLink="/login" >Login<i class="material-icons right">arrow_drop_down</i></a></mz-navbar-item> -->
     <!-- <mz-navbar-item><a id="btn-dropdown-demo" >Login<i class="material-icons right">arrow_drop_down</i></a></mz-navbar-item> -->
-    <mz-navbar-item><a id="btn-sidenav-demo" class=""><i class="material-icons right">account_box</i></a></mz-navbar-item>
+    <mz-navbar-item>
+      <a id="btn-sidenav-demo" ><i class="material-icons">account_box</i></a>
+    </mz-navbar-item>
   </mz-navbar-item-container>
 </mz-navbar>

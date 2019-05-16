@@ -4,6 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +26,9 @@ import { MzDropdownModule } from 'ngx-materialize'
 import { UserStatusPipe } from './pipes/user-status.pipe';
 import { LoginComponent } from './security/login/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { RegisterComponent } from './user/register/register.component';
+import { SidenavUserComponent } from './layout/sidenav/sidenav-user/sidenav-user.component';
+import { SidenavNavMobileComponent } from './layout/sidenav/sidenav-nav-mobile/sidenav-nav-mobile.component';
 
 
 @NgModule({
@@ -32,7 +39,10 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
     ConversationComponent,
     UserStatusPipe,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterComponent,
+    SidenavUserComponent,
+    SidenavNavMobileComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +57,11 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
     MzCardModule,
     MzButtonModule,
     MzDropdownModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]

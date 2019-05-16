@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col s12 offset-m4 m4" style="margin-top: 5%;">
+        <mz-card
+          class="center-align"
+          [horizontal]="true"
+          [hoverable]="true" >
+        <mz-card-title>
+          AULA
+        </mz-card-title>
+        <mz-card-content>
+          <div class="input-field col s12">
+              <input id="user_input" type="text" class="validate" [(ngModel)]="email">
+              <label for="user_input">Correo</label>
+          </div>
+          <div class="input-field col s12">
+              <input id="password" type="password" class="validate" [(ngModel)]="password">
+              <label for="password">Contraseña</label>
+          </div>
+          <div class="col s12">
+            <button class="btn waves-effect waves-light" type="button" (click)="Register()" >Registrar
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </mz-card-content>
+      </mz-card>
+    </div>
+  </div>

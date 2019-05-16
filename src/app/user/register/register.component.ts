@@ -2,30 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
-  public email: string = null;
-  public password: string = null;
+export class RegisterComponent implements OnInit {
+  public email;
+  public password;
   constructor(
     private authenticationService: AuthenticationService
   ) { }
 
   ngOnInit() {
-
   }
 
-  Login() {
-    this.authenticationService.loginWithEmail(this.email,this.password).then(
+  Register() {
+    this.authenticationService.registerWithEmail(this.email,this.password).then(
       (data)=> {
-        alert('Login correcto');
+        alert('Registrado con exito');
         console.log(data);
       }
     ).catch(
       (error) => {
-        alert('Login fallo');
+        alert('Registro fallo');
         console.log(error);
       }
     );;
