@@ -1,4 +1,4 @@
-<mz-sidenav [id]="'sidenav-demo'" [collapseButtonId]="'btn-sidenav-demo'">
+<mz-sidenav #sidenavProfile [id]="'sidenav-demo'" [collapseButtonId]="'btn-sidenav-demo'">
   <mz-sidenav-header>
       <li>
         <div class="user-view">
@@ -10,15 +10,15 @@
         </div>
       </li>
   </mz-sidenav-header>
-  <mz-sidenav-subheader>Profile</mz-sidenav-subheader>
+  <mz-sidenav-subheader>Perfil</mz-sidenav-subheader>
   <mz-sidenav-link>
-    <a href="#">Datos<i class="material-icons right">person</i></a>
+    <a [routerLink]="'/'" (click)="sidenavProfile.opened = !sidenavProfile.opened" >Datos<i class="material-icons right">person</i></a>
   </mz-sidenav-link>
   <mz-sidenav-link [active]="true">
-    <a href="#">Configuración<i class="material-icons right">settings</i></a>
+    <a [routerLink]="'/'" (click)="sidenavProfile.opened = !sidenavProfile.opened" >Configuración<i class="material-icons right">settings</i></a>
   </mz-sidenav-link>
   <mz-sidenav-divider></mz-sidenav-divider>
   <mz-sidenav-link>
-    <a href="#" class="waves-effect">Salir<i class="material-icons right">exit_to_app</i></a>
+    <a class="waves-effect" (click)="logout()" >Salir<i class="material-icons right">exit_to_app</i></a>
   </mz-sidenav-link>
 </mz-sidenav>

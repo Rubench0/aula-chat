@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MzMediaService } from 'ngx-materialize';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  public smallResolution: Observable<boolean>;
 
-  constructor() { }
+  constructor(
+    private mediaService: MzMediaService
+  ) {
+    this.smallResolution = this.mediaService.isActive('gt-s');
+  }
 
   ngOnInit() {
+
   }
 
 }

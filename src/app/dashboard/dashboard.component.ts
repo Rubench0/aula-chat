@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private friendsServices: FriendsService
   ) {
-    this.friends = this.friendsServices.getFriends();
+    //this.friends = this.friendsServices.getFriends();
   }
 
   ngOnInit() {

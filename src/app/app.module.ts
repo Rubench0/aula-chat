@@ -22,6 +22,9 @@ import { MzNavbarModule } from 'ngx-materialize';
 import { MzCardModule } from 'ngx-materialize';
 import { MzButtonModule } from 'ngx-materialize';
 import { MzDropdownModule } from 'ngx-materialize'
+import { MzMediaModule } from 'ngx-materialize';
+import { MzBadgeModule } from 'ngx-materialize';
+import { MzFeatureDiscoveryModule } from 'ngx-materialize';
 
 import { UserStatusPipe } from './pipes/user-status.pipe';
 import { LoginComponent } from './security/login/login.component';
@@ -29,6 +32,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { RegisterComponent } from './user/register/register.component';
 import { SidenavUserComponent } from './layout/sidenav/sidenav-user/sidenav-user.component';
 import { SidenavNavMobileComponent } from './layout/sidenav/sidenav-nav-mobile/sidenav-nav-mobile.component';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
@@ -42,7 +46,8 @@ import { SidenavNavMobileComponent } from './layout/sidenav/sidenav-nav-mobile/s
     NavbarComponent,
     RegisterComponent,
     SidenavUserComponent,
-    SidenavNavMobileComponent
+    SidenavNavMobileComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,10 @@ import { SidenavNavMobileComponent } from './layout/sidenav/sidenav-nav-mobile/s
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MzMediaModule,
+    MzBadgeModule,
+    MzFeatureDiscoveryModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]

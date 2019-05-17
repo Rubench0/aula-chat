@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+.margin-top-div {
+    margin-top: 3%;
+}
+
+.overflow {
+    height: 73vh;
+    overflow: auto;
+}
+
+.notification {
+    margin-left: -3vh;
+    margin-bottom: 40px;
+    background-color: grey;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+}

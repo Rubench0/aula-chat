@@ -4,12 +4,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConversationComponent } from './conversation/conversation.component';
 import { LoginComponent } from './security/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
+import { MainComponent } from './main/main.component';
+import { AuthenticationGuard } from './guard/authentication.guard';
 
 const routes: Routes = [
-  {path: 'dashboard', component: DashboardComponent},
+  {path: '', component: MainComponent, canActivate: [AuthenticationGuard]},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard]},
 	{path: 'login', component: LoginComponent},
 	{path: 'register', component: RegisterComponent},
-	{path: 'conversation/:uid', component: ConversationComponent},
+	{path: 'conversation/:uid', component: ConversationComponent, canActivate: [AuthenticationGuard]},
 	//{path: '**', component: LoginComponent}
 ];
 

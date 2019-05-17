@@ -16,8 +16,8 @@
   <mz-dropdown-item><a href="#!">Three</a></mz-dropdown-item>
 </mz-dropdown> -->
 
-<mz-navbar navbarClass="orange darken-2">
-  <mz-navbar-item-container [align]="'left'">
+<mz-navbar navbarClass="orange darken-2" >
+  <mz-navbar-item-container [align]="'left'" >
       <mz-navbar-item >
         <a id="btn-sidenav-mobile" ><i class="material-icons">dehaze</i></a>
       </mz-navbar-item>
@@ -26,8 +26,14 @@
         </mz-navbar-item>
     </mz-navbar-item-container>
   <mz-navbar-item-container [align]="'right'">
-    <mz-navbar-item >
-      <a [routerLink]="'/dashboard'" >Contactos<i class="material-icons right">people</i></a>
+    <mz-navbar-item>
+      <a [routerLink]="'/'" >Clases<i class="material-icons right">local_library</i></a>
+    </mz-navbar-item>
+    <mz-navbar-item *ngIf="smallResolution | async">
+      <a [routerLink]="'/dashboard'" ><i class="material-icons left">inbox</i><span class="notification">4</span></a>
+    </mz-navbar-item>
+    <mz-navbar-item>
+      <a [routerLink]="'/'" ><i class="material-icons left">notifications</i><span class="notification">40</span></a>
     </mz-navbar-item>
     <!-- <mz-navbar-item><a routerLink="/login" >Login<i class="material-icons right">arrow_drop_down</i></a></mz-navbar-item> -->
     <!-- <mz-navbar-item><a id="btn-dropdown-demo" >Login<i class="material-icons right">arrow_drop_down</i></a></mz-navbar-item> -->

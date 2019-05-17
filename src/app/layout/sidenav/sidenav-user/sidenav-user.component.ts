@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav-user',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.authenticationService.logOut().then(
+      () => {
+        alert('sesión cerrada');
+        this.router.navigate(['/login']);
+      }
+    ).catch(
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
 }

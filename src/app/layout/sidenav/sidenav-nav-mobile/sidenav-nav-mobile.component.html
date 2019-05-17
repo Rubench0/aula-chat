@@ -1,8 +1,8 @@
-<mz-sidenav [id]="'sidenav-mobile'" [collapseButtonId]="'btn-sidenav-mobile'">
+<mz-sidenav #sidenavMobile [id]="'sidenav-mobile'" [collapseButtonId]="'btn-sidenav-mobile'" >
   <mz-sidenav-link>
-      <a [routerLink]="'/dashboard'" >Contactos<i class="material-icons right">people</i></a>
+      <a [routerLink]="'/dashboard'" (click)="sidenavMobile.opened = !sidenavMobile.opened" >Contactos<i class="material-icons right">people</i></a>
   </mz-sidenav-link>
   <mz-sidenav-link [active]="true">
-      <a [routerLink]="'/'" >AULA</a>
+      <a [routerLink]="'/'" (click)="sidenavMobile.opened = !sidenavMobile.opened" >AULA</a>
   </mz-sidenav-link>
 </mz-sidenav>
