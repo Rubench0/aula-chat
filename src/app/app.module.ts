@@ -33,6 +33,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { SidenavUserComponent } from './layout/sidenav/sidenav-user/sidenav-user.component';
 import { SidenavNavMobileComponent } from './layout/sidenav/sidenav-nav-mobile/sidenav-nav-mobile.component';
 import { MainComponent } from './main/main.component';
+import { EditComponent } from './user/edit/edit.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { MainComponent } from './main/main.component';
     RegisterComponent,
     SidenavUserComponent,
     SidenavNavMobileComponent,
-    MainComponent
+    MainComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
