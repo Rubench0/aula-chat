@@ -1,6 +1,7 @@
 .div-chat {
     height: 60vh;
     overflow: auto;
+    margin-top: 3%;
 }
 
 .bg-chat-1 {
@@ -24,6 +25,13 @@
     overflow-y:auto;
     /* margin-left: 2%;
     width: 96%; */
+}
+
+.message {
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 10px 10px 0px 10px;
+    -moz-border-radius: 10px 10px 0px 10px;
+    border-radius: 10px 10px 0px 10px;
 }
 
 /* 
@@ -56,15 +64,4 @@
 
 .message_input {
     margin-top: 2%;
-}
-
-.message {
-    margin-top: 3%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 3%;
-    padding-right: 3%;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
 } */
