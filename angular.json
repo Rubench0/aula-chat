@@ -24,7 +24,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/materialize-css/dist/css/materialize.min.css",
+              "node_modules/materialize-css/dist/css/materialize.css",
               "node_modules/@mdi/font/css/materialdesignicons.min.css",
               "src/assets/css/fonts/icon.css"
             ],

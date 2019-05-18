@@ -24,3 +24,11 @@
     -moz-border-radius: 25px;
     border-radius: 25px;
 }
+
+.border-test {
+    border: 1px solid black;
+}
+
+.bg-chat {
+    background-color: #f0e9e9;
+}

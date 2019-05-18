@@ -25,6 +25,8 @@ import { MzDropdownModule } from 'ngx-materialize'
 import { MzMediaModule } from 'ngx-materialize';
 import { MzBadgeModule } from 'ngx-materialize';
 import { MzFeatureDiscoveryModule } from 'ngx-materialize';
+import { MzTabModule } from 'ngx-materialize';
+import { MzTextareaModule } from 'ngx-materialize'
 
 import { UserStatusPipe } from './pipes/user-status.pipe';
 import { LoginComponent } from './security/login/login.component';
@@ -71,7 +73,9 @@ import { EditComponent } from './user/edit/edit.component';
     AngularFireDatabaseModule,
     MzMediaModule,
     MzBadgeModule,
-    MzFeatureDiscoveryModule
+    MzFeatureDiscoveryModule,
+    MzTabModule,
+    MzTextareaModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]
