@@ -1,0 +1,24 @@
+<div class="row">
+  <mz-navbar navbarClass="deep-purple accent-4" >
+    <mz-navbar-item-container [align]="'left'" >
+        <mz-navbar-item >
+          <a [routerLink]="'/'" ><i class="material-icons">arrow_back</i></a>
+        </mz-navbar-item>
+        <mz-navbar-item >
+            <a >AULA</a>
+          </mz-navbar-item>
+      </mz-navbar-item-container>
+    <mz-navbar-item-container [align]="'right'">
+      <mz-navbar-item>
+          <a ><i class="material-icons">search</i></a>
+      </mz-navbar-item>
+      <mz-navbar-item *ngIf="smallResolution | async">
+        <a id="btn-side-chat-class" ><i class="material-icons">apps</i></a>
+      </mz-navbar-item>
+      <mz-navbar-item>
+        <a id="btn-dropdown" ><i class="material-icons">more_vert</i></a>
+      </mz-navbar-item>
+    </mz-navbar-item-container>
+  </mz-navbar>
+</div>
+<app-side-nav-chat-class></app-side-nav-chat-class>

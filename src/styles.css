@@ -32,3 +32,55 @@
 .bg-chat {
     background-color: #f0e9e9;
 }
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6200ea;
+    border: 0px none #6200ea;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:#311b92;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #311b92;
+}
+
+::-webkit-scrollbar-track {
+    background: #e3e3e3;
+    border: 0px none #e3e3e3;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #e3e3e3;
+}
+
+::-webkit-scrollbar-track:active {
+    background: #e3e3e3;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+body {
+    SCROLLBAR-FACE-COLOR:red;
+    SCROLLBAR-HIGHLIGHT-COLOR: brown;
+    SCROLLBAR-SHADOW-COLOR: #6699CC;
+    SCROLLBAR-3DLIGHT-COLOR: #FFFFFF;
+    SCROLLBAR-ARROW-COLOR: #FFFFFF;
+    SCROLLBAR-TRACK-COLOR: #E3E3E3;
+    SCROLLBAR-DARKSHADOW-COLOR: #000000;
+}

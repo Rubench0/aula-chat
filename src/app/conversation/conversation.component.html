@@ -1,91 +1,80 @@
 <div class="container white">
-  <div class="row">
-    <mz-navbar navbarClass="orange darken-2" >
-      <mz-navbar-item-container [align]="'left'" >
-          <mz-navbar-item >
-            <a id="btn-sidenav-mobile" ><i class="material-icons">arrow_back</i></a>
-          </mz-navbar-item>
-          <mz-navbar-item >
-              <a [routerLink]="'/'" >AULA</a>
-            </mz-navbar-item>
-        </mz-navbar-item-container>
-      <mz-navbar-item-container [align]="'right'">
-        <mz-navbar-item>
-          <a id="btn-dropdown" ><i class="material-icons">more_vert</i></a>
-        </mz-navbar-item>
-      </mz-navbar-item-container>
-    </mz-navbar>
-  </div>
+  <nav-chat></nav-chat>
   <div class="row" style="margin-top: -20px;">
-      <div class="col s12">
-        <div class="row">
-          <div class="col s12">
-            <div class="div-chat">
-              <div class="row valign-wrapper">
+    <div class="col" [ngClass]="{'s8':smallResolution | async,'s12':!smallResolution | async}">
+      <div class="row">
+        <div class="col s12">
+          <div class="div-chat">
+            <div class="row valign-wrapper row-chat">
+              <div class="col s10 message">
+                  <span><b>Usuario</b></span><br>
+                  <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </span><br>
+                  <span class="right" style="font-size: 10px;">2:34 p.m</span>
+              </div>
+              <div class="col s2">
+                <div [ngClass]="{'img-message-chat': smallResolution | async}">
+                  <img src="assets/sidenav-demo-avatar.png" class="circle responsive-img">
+                </div>
+              </div>
+            </div>
+            <div class="row valign-wrapper">
+              <div class="col s2">
+                  <div [ngClass]="{'img-message-chat': smallResolution | async}" class="right">
+                  <img src="assets/sidenav-demo-avatar.png" class="circle responsive-img">
+                </div>
+              </div>
+              <div class="col s10 message">
+                  <span><b>Usuario</b></span><br>
+                  <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </span><br>
+                  <span class="right" style="font-size: 10px;">2:34 p.m</span>
+              </div>
+            </div>
+            <div class="row valign-wrapper">
+              <div class="col s10 message">
+                  <span><b>Usuario</b></span><br>
+                  <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </span><br>
+                  <span class="right" style="font-size: 10px;">2:34 p.m</span>
+              </div>
+              <div class="col s2">
+                <div [ngClass]="{'img-message-chat': smallResolution | async}">
+                  <img src="assets/sidenav-demo-avatar.png" class="circle responsive-img">
+                </div>
+              </div>
+            </div>
+            <div class="row valign-wrapper">
+                <div class="col s2">
+                    <div [ngClass]="{'img-message-chat': smallResolution | async}" class="right">
+                    <img src="assets/sidenav-demo-avatar.png" class="circle responsive-img">
+                  </div>
+                </div>
                 <div class="col s10 message">
                     <span><b>Usuario</b></span><br>
                     <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </span><br>
                     <span class="right" style="font-size: 10px;">2:34 p.m</span>
                 </div>
-                <div class="col s2">
-                  <div class="">
-                    <img src="assets/sidenav-demo-avatar.png" class="circle responsive-img">
-                  </div>
-                </div>
               </div>
-              <div class="row valign-wrapper">
-                <div class="col s2">
-                  <div class="">
-                    <img src="assets/sidenav-demo-avatar.png" class="circle responsive-img">
-                  </div>
-                </div>
-                <div class="col s10 message">
-                    <span><b>Usuario</b></span><br>
-                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </span><br>
-                    <span class="right" style="font-size: 10px;">2:34 p.m</span>
-                </div>
-              </div>
-              <div class="row valign-wrapper">
-                <div class="col s10 message">
-                    <span><b>Usuario</b></span><br>
-                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </span><br>
-                    <span class="right" style="font-size: 10px;">2:34 p.m</span>
-                </div>
-                <div class="col s2">
-                  <div class="">
-                    <img src="assets/sidenav-demo-avatar.png" class="circle responsive-img">
-                  </div>
-                </div>
-              </div>
-              <div class="row valign-wrapper">
-                  <div class="col s2">
-                    <div class="">
-                      <img src="assets/sidenav-demo-avatar.png" class="circle responsive-img">
-                    </div>
-                  </div>
-                  <div class="col s10 message">
-                      <span><b>Usuario</b></span><br>
-                      <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </span><br>
-                      <span class="right" style="font-size: 10px;">2:34 p.m</span>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="row" style="margin-top: -20px;">
-          <div class="col s12 valign-wrapper">
-            <div class="col s10">
-              <div class="">
-                <textarea class="materialize-textarea chat-textarea" ></textarea>
-              </div>
-            </div>
-            <div class="col s2">
-                <button class="" type="button" name="action"><i class="material-icons">send</i>
-                </button>
-            </div>
           </div>
         </div>
       </div>
+      <div class="row" style="margin-top: -20px;">
+        <div class="col s12 valign-wrapper">
+          <div class="col s10">
+            <div class="">
+              <textarea class="materialize-textarea chat-textarea" ></textarea>
+            </div>
+          </div>
+          <div class="col s2">
+              <button class="" type="button" name="action"><i class="material-icons">send</i>
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s4" *ngIf="smallResolution | async">
+      <div style="margin-top:20px;">
+        <app-tab-resource-class></app-tab-resource-class>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -104,55 +93,6 @@
   <mz-dropdown-item><a href="#!">Three</a></mz-dropdown-item>
 </mz-dropdown>
 
-
-
-
-
-  <div class="row">
-    <div class="col s12 div-chat">
-        <div class="card">
-          <div class="chat-body">
-              <div class="col s7 ">
-                <div class="chat">
-                  <div class="col s12 chat-main">
-                    <div class="col s12">
-                      <div class="message orange white-text left">
-  
-                      </div>
-                    </div>
-                    <div class="col s12">
-                      <div class="message blue white-text right">
-      
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col s12">
-                    <div class="chat-message valign-wrapper border-test">
-                      <div class="col s10">
-                        <textarea class="materialize-textarea" ></textarea>
-                      </div>
-                      <div class="col s2">
-                        <div class="">
-                          <button class="btn waves-effect waves-light center-align" type="submit" name="action"><i class="material-icons">send</i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col s5 chat-participants">
-                <mz-tab [fixedTabWidth]="'true'" [responsiveThreshold]="'true'" >
-                  <mz-tab-item [active]="'true'" [label]="'Participantes'" >
-                    Participantes
-                  </mz-tab-item>
-                  <mz-tab-item [label]="'Recurso'">
-                    Recurso
-                  </mz-tab-item>
-                  <mz-tab-item [label]="'Acciones'">
-                    Acciones
-                  </mz-tab-item>
-                </mz-tab>
                   <!-- <ul class="collection with-header">
                       <li class="collection-header"><h6>Participantes</h6></li>
                       <ng-container *ngFor="let friend of friends | search: query; let i = index;">
@@ -166,8 +106,3 @@
                         </li>
                       </ng-container>
                     </ul> -->
-              </div>
-          </div>
-        </div>
-    </div>
-  </div>

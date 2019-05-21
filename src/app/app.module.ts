@@ -30,12 +30,15 @@ import { MzTextareaModule } from 'ngx-materialize'
 
 import { UserStatusPipe } from './pipes/user-status.pipe';
 import { LoginComponent } from './security/login/login.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
 import { RegisterComponent } from './user/register/register.component';
 import { SidenavUserComponent } from './layout/sidenav/sidenav-user/sidenav-user.component';
 import { SidenavNavMobileComponent } from './layout/sidenav/sidenav-nav-mobile/sidenav-nav-mobile.component';
 import { MainComponent } from './main/main.component';
 import { EditComponent } from './user/edit/edit.component';
+import { NavChatComponent } from './layout/navbar/nav-chat/nav-chat.component';
+import { SideNavChatClassComponent } from './layout/sidenav/side-nav-chat-class/side-nav-chat-class.component';
+import { NavbarMainComponent } from './layout/navbar/nav-main/navbar.component';
+import { TabResourceClassComponent } from './layout/tab/tab-resource-class/tab-resource-class.component';
 
 
 @NgModule({
@@ -46,12 +49,15 @@ import { EditComponent } from './user/edit/edit.component';
     ConversationComponent,
     UserStatusPipe,
     LoginComponent,
-    NavbarComponent,
+    NavbarMainComponent,
     RegisterComponent,
     SidenavUserComponent,
     SidenavNavMobileComponent,
     MainComponent,
-    EditComponent
+    EditComponent,
+    NavChatComponent,
+    SideNavChatClassComponent,
+    TabResourceClassComponent
   ],
   imports: [
     BrowserModule,

@@ -3,11 +3,11 @@ import { Observable } from 'rxjs';
 import { MzMediaService } from 'ngx-materialize';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-navbar-main',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarMainComponent implements OnInit {
   public smallResolution: Observable<boolean>;
 
   constructor(

@@ -32,36 +32,10 @@
     -webkit-border-radius: 10px 10px 0px 10px;
     -moz-border-radius: 10px 10px 0px 10px;
     border-radius: 10px 10px 0px 10px;
+    margin-right: 2%;
 }
 
-/* 
-.chat-header {
-    min-height: 8vh;
-    border-bottom: 1px solid #e3e3e3;
+.img-message-chat {
+    width: 40%;
+    height: 40%;
 }
-.chat-body {
-    min-height: 70vh;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-}
-.chat-participants {
-    min-height: 80vh;
-    border: 1px solid #e3e3e3;
-}
-.chat {
-    min-height: 70vh;
-    border-right: 1px solid #e3e3e3;
-    border-bottom: 1px solid #e3e3e3;
-}
-
-.chat-main {
-    min-height: 50vh;
-    overflow-y: auto;
-    border-right: 1px solid #f00;
-    border-bottom: 1px solid #f00;
-}
-
-
-.message_input {
-    margin-top: 2%;
-} */
