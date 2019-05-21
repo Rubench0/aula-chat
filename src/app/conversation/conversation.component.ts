@@ -41,6 +41,7 @@ export class ConversationComponent implements OnInit {
                 this.friend = response;
                 const ids = [this.user.uid, this.friend.uid].sort();
                 this.conversation_id = ids.join('|');
+                //)
                 // console.log(this.user);
                 // console.log(this.friend);
                 // console.log(this.conversation_id);
