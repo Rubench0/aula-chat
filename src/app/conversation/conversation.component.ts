@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FriendsService } from '../services/friends.service';
 import { User } from '../interfaces/user';
@@ -22,6 +22,8 @@ export class ConversationComponent implements OnInit {
   public see: boolean;
   public smallResolution: Observable<boolean>;
   public conversation: any[];
+  @ViewChild('divChat') divChat: ElementRef;
+  @ViewChildren('messages') messages: QueryList<any>;
   constructor(
     private activatedRoute: ActivatedRoute,
     private friendsServices: FriendsService,
@@ -58,7 +60,7 @@ export class ConversationComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.scrollToBottom();
   }
 
   sendMessage() {
@@ -103,6 +105,16 @@ export class ConversationComponent implements OnInit {
     } else {
       return this.user.nick;
     }
+  }
+
+  ngAfterViewInit() {
+    this.messages.changes.subscribe(this.scrollToBottom);
+  }
+
+  scrollToBottom = () => {
+    try {
+      this.divChat.nativeElement.scrollTop = this.divChat.nativeElement.scrollHeight;
+    } catch (err) {}
   }
 
 }

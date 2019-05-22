@@ -21,7 +21,7 @@
 }
 
 .chat-textarea {
-    max-height: 5vh;
+    max-height: 4vh;
     overflow-y:auto;
     /* margin-left: 2%;
     width: 96%; */
