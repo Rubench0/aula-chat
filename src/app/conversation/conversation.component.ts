@@ -6,6 +6,8 @@ import { MzMediaService } from 'ngx-materialize';
 import { Observable } from 'rxjs';
 import { ConversationService } from '../services/conversation.service';
 import { AuthenticationService } from '../services/authentication.service';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-conversation',
@@ -24,12 +26,16 @@ export class ConversationComponent implements OnInit {
   public conversation: any[];
   @ViewChild('divChat') divChat: ElementRef;
   @ViewChildren('messages') messages: QueryList<any>;
+  public imageChangedEvent: any = '';
+  public croppedImage: any = '';
+  public picture: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private friendsServices: FriendsService,
     private mediaService: MzMediaService,
     private conversationService: ConversationService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private fireBaseStorage: AngularFireStorage
   ) {
     this.friendId = this.activatedRoute.snapshot.params['uid'];
     this.smallResolution = this.mediaService.isActive('gt-s');
@@ -70,12 +76,42 @@ export class ConversationComponent implements OnInit {
       text: this.textMessage,
       sender: this.user.uid,
       receiver: this.friend.uid,
+      type: 'text',
     };
     this.conversationService.createConversation(message).then(
       () => {
         this.textMessage = '';
       }
     );
+  }
+
+  sendImage() {
+      const currentPictureId = Date.now();
+      const savePicture = this.fireBaseStorage.ref('pictures/conversations/' + currentPictureId + '.png').putString(this.croppedImage, 'data_url');
+      savePicture.then(()=> {
+        this.picture = this.fireBaseStorage.ref('pictures/conversations/' + currentPictureId + '.png').getDownloadURL();
+        this.picture.subscribe((url)=> {
+            this.sendImageConversation(url);
+          });
+      }).catch((error)=>{
+        console.log(error);
+      });
+  }
+
+  sendImageConversation(url: string) {
+    const message = {
+      uid: this.conversation_id,
+      timestamp: Date.now(),
+      text: url,
+      sender: this.user.uid,
+      receiver: this.friend.uid,
+      type: 'image'
+    };
+
+    this.conversationService.createConversation(message).then(() => {
+      this.croppedImage = '';
+      this.imageChangedEvent = '';
+    });
   }
 
   getConversation() {
@@ -86,9 +122,13 @@ export class ConversationComponent implements OnInit {
         this.conversation.forEach(
           (message) => {
             if(!message.seen) {
-              message.seen = true;
-              this.conversationService.editConversation(message);
-              this.see = false;
+              if (message.type == 'text') {
+                message.seen = true;
+                this.conversationService.editConversation(message);
+                this.see = false;
+              } else if(message.type == 'image') {
+                console.log(message);
+              }
             }
           }
         )
@@ -115,6 +155,22 @@ export class ConversationComponent implements OnInit {
     try {
       this.divChat.nativeElement.scrollTop = this.divChat.nativeElement.scrollHeight;
     } catch (err) {}
+  }
+
+  fileChangeEvent(event: any): void {
+    this.imageChangedEvent = event;
+  }
+  imageCropped(event: ImageCroppedEvent) {
+      this.croppedImage = event.base64;
+  }
+  imageLoaded() {
+      // show cropper
+  }
+  cropperReady() {
+      // cropper ready
+  }
+  loadImageFailed() {
+      // show message
   }
 
 }

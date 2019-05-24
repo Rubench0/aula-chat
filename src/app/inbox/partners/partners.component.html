@@ -1,0 +1,39 @@
+<div class="container white">
+  <app-navbar-main></app-navbar-main>
+  <div class="row">
+    <div class="col s12 m4">
+      <ul class="collection with-header">
+        <li class="collection-header grey">
+          <h6>Compañeros</h6>
+        </li>
+        <div class="overflow">
+          <ng-container *ngFor="let friend of friends; let i = index;">
+            <li class="collection-item avatar" >
+              <img src="assets/sidenav-demo-avatar.png" alt="" class="circle">
+              <span class="title">{{ friend.nick }}</span><br>
+              <a routerLink="/conversation/{{ friend.uid }}" >
+                {{ friend.email }}
+              </a>
+            </li>
+          </ng-container>
+          <ng-container *ngFor="let friend of friends; let i = index;">
+            <li class="collection-item avatar" >
+              <img src="assets/sidenav-demo-avatar.png" alt="" class="circle">
+              <span class="title">{{ friend.nick }}</span><br>
+              <a routerLink="/conversation/{{ friend.uid }}" >
+                {{ friend.email }}
+              </a>
+            </li>
+          </ng-container>
+        </div>
+      </ul>
+    </div>
+    <div class="col s12 m8">
+      
+    </div>
+  </div>
+</div>
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large waves-effect waves-light red" (click)="openServiceModal()" ><i class="material-icons">person_add</i></a>
+</div>

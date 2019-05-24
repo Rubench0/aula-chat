@@ -5,11 +5,12 @@
       <div class="row">
         <div class="col s12">
           <div class="div-chat" #divChat>
-            <div #messages class="row valign-wrapper row-chat" *ngFor="let m of conversation" >
+            <div #messages  class="row valign-wrapper row-chat" *ngFor="let m of conversation" >
               <ng-container *ngIf="m.sender == user.uid; else messageI">
                 <div class="col s10 message">
                     <span><b>{{ getUserNickById(m.sender) }}</b></span><br>
-                    <span>{{ m.text }}</span><br>
+                    <span *ngIf="m.type == 'image'" ><img src="{{ m.text }}" ></span>
+                    <span *ngIf="m.type == 'text'" >{{ m.text }}</span><br>
                     <span class="right" style="font-size: 10px;">{{ m.timestamp | date: 'short' }}</span>
                     <span *ngIf="!see" class="grey-text" ><i class="material-icons" style="font-size: 18px;">done_all</i></span>
                 </div>
@@ -33,6 +34,16 @@
                   </div>
               </ng-template>
             </div>
+            <image-cropper
+                [imageChangedEvent]="imageChangedEvent"
+                [maintainAspectRatio]="true"
+                format="png"
+                (imageCropped)="imageCropped($event)"
+                (imageLoaded)="imageLoaded()"
+                (cropperReady)="cropperReady()"
+                (loadImageFailed)="loadImageFailed()"
+            ></image-cropper>
+            <img [src]="croppedImage" />
           </div>
         </div>
       </div>
@@ -41,10 +52,10 @@
           <textarea class="materialize-textarea chat-textarea" [(ngModel)]="textMessage" (keyup.enter)="sendMessage()" ></textarea>
         </div>
         <div class="col s12 right">
-            <button class="" type="button" name="action"><i class="material-icons">send</i>
+            <button class="" type="button" name="action" (click)="sendImage()"><i class="material-icons">send</i>
             </button>
-            <button type="file"><i class="material-icons">image</i></button>
-            <input type="file"  >
+            <label for="file" class="btn" ><i class="material-icons">image</i></label>
+            <input type="file" name="file" id="file" (change)="fileChangeEvent($event)" />
         </div>
       </div>
     </div>

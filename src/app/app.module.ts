@@ -15,18 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { ConversationComponent } from './conversation/conversation.component';
 
-import { MzSidenavModule } from 'ngx-materialize';
-import { MzIconModule, MzIconMdiModule } from 'ngx-materialize';
-import { MzInputModule } from 'ngx-materialize';
-import { MzNavbarModule } from 'ngx-materialize';
-import { MzCardModule } from 'ngx-materialize';
-import { MzButtonModule } from 'ngx-materialize';
-import { MzDropdownModule } from 'ngx-materialize'
-import { MzMediaModule } from 'ngx-materialize';
-import { MzBadgeModule } from 'ngx-materialize';
-import { MzFeatureDiscoveryModule } from 'ngx-materialize';
-import { MzTabModule } from 'ngx-materialize';
-import { MzTextareaModule } from 'ngx-materialize'
+import { MzSidenavModule, MzModalModule, MzInputModule, MzNavbarModule, MzCardModule, MzButtonModule, MzIconModule, MzIconMdiModule, MzDropdownModule, MzMediaModule, MzBadgeModule, MzFeatureDiscoveryModule, MzTabModule, MzTextareaModule } from 'ngx-materialize';
 
 import { UserStatusPipe } from './pipes/user-status.pipe';
 import { LoginComponent } from './security/login/login.component';
@@ -39,6 +28,10 @@ import { NavChatComponent } from './layout/navbar/nav-chat/nav-chat.component';
 import { SideNavChatClassComponent } from './layout/sidenav/side-nav-chat-class/side-nav-chat-class.component';
 import { NavbarMainComponent } from './layout/navbar/nav-main/navbar.component';
 import { TabResourceClassComponent } from './layout/tab/tab-resource-class/tab-resource-class.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { PartnersComponent } from './inbox/partners/partners.component';
+import { RequestsComponent } from './inbox/partners/requests/requests.component';
+import { ModalPartnerRequestComponent } from './layout/modal/modal-partner-request/modal-partner-request.component';
 
 
 @NgModule({
@@ -57,7 +50,10 @@ import { TabResourceClassComponent } from './layout/tab/tab-resource-class/tab-r
     EditComponent,
     NavChatComponent,
     SideNavChatClassComponent,
-    TabResourceClassComponent
+    TabResourceClassComponent,
+    PartnersComponent,
+    RequestsComponent,
+    ModalPartnerRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -81,9 +77,12 @@ import { TabResourceClassComponent } from './layout/tab/tab-resource-class/tab-r
     MzBadgeModule,
     MzFeatureDiscoveryModule,
     MzTabModule,
-    MzTextareaModule
+    MzTextareaModule,
+    ImageCropperModule,
+    MzModalModule
   ],
   providers: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalPartnerRequestComponent]
 })
 export class AppModule { }

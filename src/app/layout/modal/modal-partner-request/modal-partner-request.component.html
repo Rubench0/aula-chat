@@ -1,0 +1,28 @@
+<mz-modal [fixedFooter]="true" [options]="modalOptions">
+  <mz-modal-header>
+    <h4>Enviar solicitud</h4>
+  </mz-modal-header>
+  <mz-modal-content>
+    <span><b>Ingresa email de tu amigo</b></span>
+    <div class="row">
+      <div class="input-field col s12">
+        <mz-input-container>
+          <input mz-input
+            [validate]="true"
+            [dataError]="'Dato invalido'"
+            [dataSuccess]="''"
+            id="email-firend-input"
+            [label]="'Email'"
+            type="email"
+            [(ngModel)]="friendEmail"
+            (keyup.enter)="sendRequest()"
+            >
+        </mz-input-container>
+      </div>
+    </div>
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-modal-close ><i class="material-icons">cancel</i></button>
+    <button (click)="sendRequest()"  ><i class="material-icons">send</i></button>
+  </mz-modal-footer>
+</mz-modal>
