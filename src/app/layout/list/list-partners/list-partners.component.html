@@ -1,0 +1,7 @@
+<li *ngIf="contact" class="collection-item avatar" >
+  <img src="assets/sidenav-demo-avatar.png" alt="" class="circle">
+  <span class="title">{{ contact.nick }}</span><br>
+  <a routerLink="/conversation/{{ contact.uid }}" >
+    {{ contact.email }}
+  </a>
+</li>

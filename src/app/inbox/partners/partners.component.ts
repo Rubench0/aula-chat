@@ -26,6 +26,9 @@ export class PartnersComponent implements OnInit {
         this.friendsServices.getUserById(status.uid).valueChanges().subscribe(
           (data: User) => {
             this.user = data;
+            if (this.user.partners) {
+              this.user.partners = Object.values(this.user.partners);
+            }
           }
         );
       })

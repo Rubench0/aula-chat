@@ -32,6 +32,7 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import { PartnersComponent } from './inbox/partners/partners.component';
 import { ModalPartnerRequestComponent } from './layout/modal/modal-partner-request/modal-partner-request.component';
 import { ModalPartnerRequestNewComponent } from './layout/modal/modal-partner-request-new/modal-partner-request-new.component';
+import { ListPartnersComponent } from './layout/list/list-partners/list-partners.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ModalPartnerRequestNewComponent } from './layout/modal/modal-partner-re
     TabResourceClassComponent,
     PartnersComponent,
     ModalPartnerRequestComponent,
-    ModalPartnerRequestNewComponent
+    ModalPartnerRequestNewComponent,
+    ListPartnersComponent
   ],
   imports: [
     BrowserModule,

@@ -3,27 +3,12 @@
   <div class="row">
     <div class="col s12 m4">
       <ul class="collection with-header">
-        <li class="collection-header grey">
-          <h6>Compañeros</h6>
+        <li class="collection-header grey" *ngIf="user && user.partners" >
+          <h6>Compañeros ({{ user.partners.length }})</h6>
         </li>
-        <div class="overflow">
-          <ng-container *ngFor="let friend of friends; let i = index;">
-            <li class="collection-item avatar" >
-              <img src="assets/sidenav-demo-avatar.png" alt="" class="circle">
-              <span class="title">{{ friend.nick }}</span><br>
-              <a routerLink="/conversation/{{ friend.uid }}" >
-                {{ friend.email }}
-              </a>
-            </li>
-          </ng-container>
-          <ng-container *ngFor="let friend of friends; let i = index;">
-            <li class="collection-item avatar" >
-              <img src="assets/sidenav-demo-avatar.png" alt="" class="circle">
-              <span class="title">{{ friend.nick }}</span><br>
-              <a routerLink="/conversation/{{ friend.uid }}" >
-                {{ friend.email }}
-              </a>
-            </li>
+        <div class="overflow" *ngIf="user && user.partners" >
+          <ng-container *ngFor="let friend of user.partners; let i = index;">
+            <app-list-partners [uid]="friend" ></app-list-partners>
           </ng-container>
         </div>
       </ul>
