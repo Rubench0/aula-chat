@@ -29,7 +29,7 @@ export class ModalPartnerRequestComponent extends MzBaseModal {
     ) {
     super();
   }
-  
+
   public sendRequest() {
     const request = {
       timestamp: Date.now(),

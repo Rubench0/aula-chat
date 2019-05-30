@@ -28,4 +28,9 @@ export class FriendsService {
     return this.angularFireDatabase.object('/users/' + user.uid).update(user);
    }
 
+   addPartner(userId,partnerId) {
+    this.angularFireDatabase.object('users/' + userId + '/partners/' + partnerId).set(partnerId);
+    return this.angularFireDatabase.object('users/' + partnerId + '/partners/' + userId).set(userId);
+   }
+
  }

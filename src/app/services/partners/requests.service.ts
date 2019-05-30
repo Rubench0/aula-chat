@@ -24,4 +24,6 @@ export class RequestsService {
     const cleanEmail = email.replace('.',',');
     return this.angularFireDataBase.list('partners/requests/' + cleanEmail);
   }
+
+  
 }

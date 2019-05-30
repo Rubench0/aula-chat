@@ -1,0 +1,22 @@
+<mz-modal [fixedFooter]="true" [options]="modalOptions">
+  <mz-modal-header>
+    <h4>Nueva solicitud</h4>
+  </mz-modal-header>
+  <mz-modal-content>
+    <div class="row">
+      <div class="col s12">
+        <b>{{ sender.nick }}</b><br>
+        <small>Te ha enviado esta solicitud</small>
+      </div>
+      <hr>
+      <span>¿Deseas aceptar a este compañero?</span><br>
+      <input type="radio" name="addpartner" [(ngModel)]="partneradd" value="yes" id="add-yes" ><label for="add-yes">Si</label><br>
+      <input type="radio" name="addpartner" [(ngModel)]="partneradd" value="no" id="add-no" ><label for="add-no">No</label><br>
+      <input type="radio" name="addpartner" [(ngModel)]="partneradd" value="later" id="add-later" ><label for="add-later">Luego</label>
+    </div>
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-modal-close ><i class="material-icons">cancel</i>Cerrar</button>
+    <button (click)="accept()"><i class="material-icons">send</i>Aceptar</button>
+  </mz-modal-footer>
+</mz-modal>
